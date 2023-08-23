@@ -197,7 +197,11 @@ function calculate(e){
 
     //divin içindeki notu gösteren paragraf5
     const pInfo5 = document.createElement("p")
-    pInfo5.innerText=parseInt(minFinalMark)
+    if(parseInt(minFinalMark)>100){
+        pInfo5.innerText= parseInt(minFinalMark) && "You failed bro :( You can't get"+" "+parseInt(minFinalMark)+" "+ "on a single exam."
+    }else{
+        pInfo5.innerText= parseInt(minFinalMark)
+    }
     pInfo5.classList.add("finalResult")
     resultDiv.appendChild(pInfo5)
 
