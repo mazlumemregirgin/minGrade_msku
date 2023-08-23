@@ -31,6 +31,25 @@ function calculate(e){
 
     e.preventDefault();
 
+    //inputların valueları veya department selector boş ise program çalışmıyor.
+    if(q1.value =="" || wq1.value =="" || ach1.value=="" || q2.value=="" || wq2.value=="" || sp1.value=="" || lms1.value=="" || se.value=="" || ach2.value=="" || q3.value=="" || wq3.value=="" ||ach3.value=="" ||q4.value=="" || wq4.value=="" || spj.value=="" || lms2.value=="" ||sp2.value==""|| loe.value=="" || selectedDepartment=="" ){
+        alert("You Did Not Enter All Grades or You Did Not Choose Your Department ")
+    //inputların valuesu 100 den büyük ise uyarı verir.
+    }
+    else if (q1.value>100 || wq1.value>100 || ach1.value>100 || q2.value>100 || wq2.value>100 || sp1.value>100 || lms1.value>100 || se.value>100 || ach2.value>100 || q3.value>100 || wq3.value>100 ||ach3.value>100 ||q4.value>100 || wq4.value>100 || spj.value>100 || lms2.value>100 ||sp2.value>100|| loe.value>100){
+        alert("Enter a grade from 0-100")
+    }
+    else{
+    //selectin içindeki optionların value'larına erişildi.
+    const passingGradeSelect = document.querySelector("#department-selector");
+    const passingGrade = parseInt(passingGradeSelect.value);
+
+    //selectin içindeki optionların textine erişildi.
+    var selectElement = document.querySelector("#department-selector");
+    var selectedOption = selectElement.options[selectElement.selectedIndex];
+    var selectedDepartment = selectedOption.text;
+
+
     //quiz ve writing quizleri seçip işlem yapıldı.
     q1Result= q1.value;
     wq1Result= wq1.value
@@ -74,16 +93,14 @@ function calculate(e){
     var totalExamsValue = (parseInt(qwqValue) + parseInt(achValue) + parseInt(spValue) + parseInt(lmsValue) + parseInt(seValue) + parseInt(spjValue) + parseInt(loeValue))*0.4
 
     //elde edilen puan departmenta göre değişen hazırlığı geçme puanından çıkarıldı.
-    var pointShouldGet = 65 - parseInt(totalExamsValue)
+    var pointShouldGet = passingGrade - parseInt(totalExamsValue)
 
     //toplanması gereken puan 0.6'ya bölündü ve final sınavından en az kaç alınması gerektiği hesaplandı ve yazdırıldı.
     var minFinalMark= parseInt( parseInt(pointShouldGet) / 0.6 )
     
 
 
-
-
-
+    
     //result list eklendi
     const resultList = document.querySelector(".result-list")
 
@@ -91,28 +108,105 @@ function calculate(e){
     const resultDiv= document.createElement("section")
     resultDiv.classList.add("result-area")
 
-    //sectionun içindeki div 
-    const resultInfoDiv = document.createElement("div")
-    resultInfoDiv.classList.add("result-info")
-    resultDiv.appendChild(resultInfoDiv);
+    //sectionun içindeki div1
+    const resultInfoDiv1 = document.createElement("div")
+    resultInfoDiv1.classList.add("result-info")
+    resultDiv.appendChild(resultInfoDiv1);
 
-    //divin içindeki açıklama
-    const h2Info = document.createElement("h2")
-    h2Info.classList.add("font-20")
-    h2Info.innerText="The minimum grade you need to get in the final exam is :"
-    resultDiv.appendChild(h2Info)
+    //divin içindeki açıklama1
+    const h2Info1 = document.createElement("h2")
+    h2Info1.classList.add("font-20")
+    h2Info1.innerText="Your Department :"
+    resultDiv.appendChild(h2Info1)
 
-    //divin içindeki notu gösteren paragraf
-    const pInfo = document.createElement("p")
-    pInfo.innerText=parseInt(minFinalMark)
-    pInfo.classList.add("finalResult")
-    resultDiv.appendChild(pInfo)
+    //divin içindeki notu gösteren paragraf1
+    const pInfo1 = document.createElement("p")
+    pInfo1.innerText=selectedDepartment
+    pInfo1.classList.add("finalResult")
+    resultDiv.appendChild(pInfo1)
 
-    //sectionı result liste ekleyen dalga
+
+
+    //sectionun içindeki div2
+    const resultInfoDiv2 = document.createElement("div")
+    resultInfoDiv2.classList.add("result-info")
+    resultDiv.appendChild(resultInfoDiv2);
+
+    //divin içindeki açıklama2
+    const h2Info2 = document.createElement("h2")
+    h2Info2.classList.add("font-20")
+    h2Info2.innerText="Passing Grade of your department :"
+    resultDiv.appendChild(h2Info2)
+
+    //divin içindeki notu gösteren paragraf2
+    const pInfo2 = document.createElement("p")
+    pInfo2.innerText=parseInt(passingGrade)
+    pInfo2.classList.add("finalResult")
+    resultDiv.appendChild(pInfo2)
+
+
+
+    //sectionun içindeki div3
+    const resultInfoDiv3 = document.createElement("div")
+    resultInfoDiv3.classList.add("result-info")
+    resultDiv.appendChild(resultInfoDiv3);
+
+    //divin içindeki açıklama3
+    const h2Info3 = document.createElement("h2")
+    h2Info3.classList.add("font-20")
+    h2Info3.innerText="The score that you got from exams during the year :"
+    resultDiv.appendChild(h2Info3)
+
+    //divin içindeki notu gösteren paragraf3
+    const pInfo3 = document.createElement("p")
+    pInfo3.innerText=parseInt(totalExamsValue)
+    pInfo3.classList.add("finalResult")
+    resultDiv.appendChild(pInfo3)
+
+
+
+    //sectionun içindeki div4
+    const resultInfoDiv4 = document.createElement("div")
+    resultInfoDiv4.classList.add("result-info")
+    resultDiv.appendChild(resultInfoDiv4);
+
+    //divin içindeki açıklama4
+    const h2Info4 = document.createElement("h2")
+    h2Info4.classList.add("font-20")
+    h2Info4.innerText="Minimum score you need to get :"
+    resultDiv.appendChild(h2Info4)
+
+    //divin içindeki notu gösteren paragraf4
+    const pInfo4 = document.createElement("p")
+    pInfo4.innerText=parseInt(pointShouldGet)
+    pInfo4.classList.add("finalResult")
+    resultDiv.appendChild(pInfo4)
+
+
+
+    //sectionun içindeki div5
+    const resultInfoDiv5 = document.createElement("div")
+    resultInfoDiv5.classList.add("result-info")
+    resultDiv.appendChild(resultInfoDiv5);
+
+    //divin içindeki açıklama5
+    const h2Info5 = document.createElement("h2")
+    h2Info5.classList.add("font-20")
+    h2Info5.innerText="The grade you need to get from the final exam for the minimum score :"
+    resultDiv.appendChild(h2Info5)
+
+    //divin içindeki notu gösteren paragraf5
+    const pInfo5 = document.createElement("p")
+    pInfo5.innerText=parseInt(minFinalMark)
+    pInfo5.classList.add("finalResult")
+    resultDiv.appendChild(pInfo5)
+
+
+    //section result liste eklendi.
     resultList.appendChild(resultDiv)
 
     
-
+    
 
     /* clear all butonuna basılınca yapılacaklar eklendi */ 
     const divToRemove = document.querySelector(".result-area");
@@ -137,7 +231,7 @@ function calculate(e){
     document.getElementById("sp2").value = "";
     document.getElementById("loe").value = "";
 });
-
+}
 }
     
     
