@@ -40,7 +40,7 @@ main > .chooser{
     font-size: 20px;
     font-weight: 600;
 }
-#seckutu{
+#department-selector{
     border: 2px solid var(--purple);
     outline: none;
     border-radius: 5px;
@@ -49,10 +49,10 @@ main > .chooser{
     font-family: 'Handjet', cursive;
     font-weight: 800;
 }
-#seckutu>option{
+#department-selector>option{
     font-weight: 600;
 }
-#seckutu:active, #seckutu:focus{
+#department-selector:active, #department-selector:focus{
     transition: 0.3s;
     border: 2px solid var(--light-orange);
 }
