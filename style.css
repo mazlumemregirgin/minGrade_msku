@@ -27,6 +27,13 @@ header{
 header>h1{
     font-family: 'Handjet', cursive;
 }
+a{
+    text-decoration: none;
+    margin-left: 5px;
+    color:black;
+    text-decoration: underline;
+    text-decoration-color: var(--light-orange);
+}
 /* main bölümü */
 main{
     display: flex;
