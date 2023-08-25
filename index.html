@@ -5,39 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>minGrade Msku-ydyo</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Handjet&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <header >
-        <h1>What Should Be Your Minimum Final Exam Grade?</h1><br>
-        <h5>made by <a href="https://www.linkedin.com/in/mazlum-emre-girgin/" target="_blank">mazlum emre girgin</a></h5>
+        <h1>Final Sınavından En Düşük Kaç Almalısın?</h1><br>
+        <h4>made by <a href="https://www.linkedin.com/in/mazlum-emre-girgin/" target="_blank">mazlum emre girgin</a></h4>
     </header>
     <main>
+        <section class="info-section">
+            <div class="aim-site-info">
+                <h2>Sitenin Amacı</h2>
+                <p>Bu site Muğla Sıtkı Koçman Üniversitesi Yabancı Dil Yüksekokulu'nda okuyan öğrencilerin yıl içinde aldıkları notlara göre hazırlık programından kalmamaları için yıl sonunda girecekleri final sınavında en az kaç puan almaları gerektiğini hesaplamaları için yapılmıştır.</p>
+            </div>
+            <div class="aim-site-info">
+                <h2>Nasıl Kullanılır?</h2>
+                <p><li>"Choose Your Department" kısmından bölüm seçilir.</li>
+                <li>Not girme bölümünden yıl içinde alınan notlar eksiksiz şekilde girilir.</li>
+                <li>"Show Me The Grade" butonuna basarak sonuç öğrenilir.</li></p>
+            </div>
+        </section>
         <section class="chooser">
-            <label for="department-selector">Choose Your Department:</label>
+            <label for="department-selector" class="chooser-info">Choose Your Department:</label>
                 <select id="department-selector" name="department-selector">
                     <option></option>
-                    <option value="70">English Language Teaching</option>
-                    <option value="70">English Language and Litareture</option>
-                    <option value="70">Translation and Interpreting</option>
-                    <option value="65">Medicine</option>
-                    <option value="65">Computer Engineering</option>
-                    <option value="65">Civil Engineering</option>
-                    <option value="65">Mining Engineering</option>
-                    <option value="65">Metallurgical and Materials Engineering</option>
-                    <option value="65">Electrical-Electronic Engineering</option>
-                    <option value="65">Software Engineering</option>
-                    <option value="65">Urban and Regional Planning</option>
-                    <option value="65">Tourism Management</option>
-                    <option value="55">Gastronomy and Culinary Arts</option>
-                    <option value="55">Tourism Guidance (Akyaka)</option>
-                    <option value="60">Economy</option>
-                    <option value="55">Political Science</option>
-                    <option value="55">International Trade and Finance</option>
-                    <option value="55">Digital Game Design</option>
-                    <option value="55">Tourist Guidance</option>
+                    <option value="70">English Language Teaching (70)</option>
+                    <option value="70">English Language and Litareture (70)</option>
+                    <option value="70">Translation and Interpreting (70)</option>
+                    <option value="65">Medicine (65)</option>
+                    <option value="65">Computer Engineering (65)</option>
+                    <option value="65">Civil Engineering (65)</option>
+                    <option value="65">Mining Engineering (65)</option>
+                    <option value="65">Metallurgical and Materials Engineering (65)</option>
+                    <option value="65">Electrical-Electronic Engineering (65)</option>
+                    <option value="65">Software Engineering (65)</option>
+                    <option value="65">Urban and Regional Planning (65)</option>
+                    <option value="65">Tourism Management (65)</option>
+                    <option value="55">Gastronomy and Culinary Arts (55)</option>
+                    <option value="55">Tourism Guidance (Akyaka) (55)</option>
+                    <option value="60">Economy (60)</option>
+                    <option value="55">Political Science (55)</option>
+                    <option value="55">International Trade and Finance (55)</option>
+                    <option value="55">Digital Game Design (55)</option>
+                    <option value="55">Tourist Guidance (55)</option>
                 </select>
         </section>
         <section class="mark-section">
@@ -122,6 +132,39 @@
                 </div>
             </article>
             
+        </section>
+        <section class="long-form-exams">
+        <article>
+            <div class="long-form">
+                <p>Q : Quiz</p>
+            </div>
+            <div class="long-form">
+                <p>Wq: Writing Quiz</p>
+            </div>
+            <div class="long-form">
+                <p>Ach: Achievement Exam</p>
+            </div>
+        </article>
+        <article >
+            <div class="long-form">
+                <p>Sp : Student Performance</p>
+            </div>
+            <div class="long-form">
+                <p>Lms: Lms Online Study Process</p>
+            </div>
+            <div class="long-form">
+                <p>Se : Speaking Exam</p>
+            </div>
+        </article>
+        <article >
+            <div class="long-form">
+                <p>Spj : Speaking Project</p>
+            </div>
+            <div class="long-form">
+                <p>Loe : Lms Online Exam</p>
+            </div>
+            
+        </article>
         </section>
         <section class="buttons-area">
             <button class="buttons button-1">Show Me The Grade</button>
