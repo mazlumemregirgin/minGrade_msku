@@ -51,7 +51,7 @@ main{
 .info-section{
     background-color: var(--box-background);
     color: var(--text-color);
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 20px auto 0  auto;
     max-width: 550px;
     padding: 20px;
@@ -64,6 +64,10 @@ main{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+.aim-site-info>h2{
+    text-decoration: underline;
+    text-decoration-color: var(--headline);
 }
 li{
     list-style-type: decimal;
@@ -96,6 +100,29 @@ main > .chooser{
     border: 2px solid var(--headline);
 }
 /* bölüm seçme yeri bitiş */
+
+/* sınav yüzdelikleri değiştirme bölümü */ 
+.examPercentage-section{
+    background-color: var(--box-background);
+    color: var(--text-color);
+    border-radius: 5px;
+    margin: 20px auto 0  auto;
+    width: 550px;
+    padding: 20px;
+    border: 5px solid var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.examPercentage-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height:10px;
+}
 
 /* not girme bölümü  */
 main > .mark-section{
