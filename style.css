@@ -4,41 +4,69 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --background-white:#e2d1f9;
-    --background-white-light:#faeef0;
-    --dark-blue:#06142E;
-    --light-blue:#1B3358;
-    --purple:#473E66;
-    --pink:#BD83B8;
-    --light-orange:#F1916D;
+@font-face {
+    font-family: 'youtubeFont'; 
+    src: url('./font/YouTubeSansRegular.otf') format('opentype'); 
 }
-body{
-    background-color: var(--background-white);
-    font-family: 'Handjet', cursive;
+
+body {
+    font-family: 'youtubeFont', sans-serif; 
+    background-color: var(--background-color);
     min-width: 550px;
+    letter-spacing: -1px;
 }
+
+:root{
+    --background-color:#004643;
+    --headline:#e16162;
+    --box-background:#e8e4e6;
+    --text-color:#001e1d;
+    --button-background-color:#f9bc60;
+    --light-green:#abd1c6;
+}
+
 header{
     text-align: center;
     margin-top:20px;
-    color: var(--dark-blue);
-    font-size:x-large;
+    color: var(--button-background-color);
 }
-header>h1{
-    font-family: 'Handjet', cursive;
+header > h1{
+    font-size: 40px;
+    font-weight: 800;
 }
+
 a{
     text-decoration: none;
     margin-left: 5px;
-    color:black;
+    color:var(--button-background-color);
     text-decoration: underline;
-    text-decoration-color: var(--light-orange);
 }
 /* main bölümü */
 main{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+/* info bölümü */
+.info-section{
+    background-color: var(--box-background);
+    color: var(--text-color);
+    border-radius: 15px;
+    margin: 20px auto 0  auto;
+    max-width: 550px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 5px solid var(--text-color);
+}
+.info-section>.aim-site-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+li{
+    list-style-type: decimal;
 }
 /* bölüm seçme yeri başlangıç */
 main > .chooser{
@@ -47,36 +75,41 @@ main > .chooser{
     font-size: 20px;
     font-weight: 600;
 }
+.chooser-info{
+    color: var(--button-background-color);
+}
 #department-selector{
-    border: 2px solid var(--purple);
     outline: none;
+    border: none;
     border-radius: 5px;
     height: 40px;
-    font-size: 20px;
-    font-family: 'Handjet', cursive;
+    font-size: 16px;
+    font-family:'youtubeFont', sans-serif; 
+    background-color: var(--box-background);
+    color: var(--text-color);
+    margin-left: 10px;
     font-weight: 800;
 }
-#department-selector>option{
-    font-weight: 600;
-}
+
 #department-selector:active, #department-selector:focus{
-    transition: 0.3s;
-    border: 2px solid var(--light-orange);
+    transition: 0.05s;
+    border: 2px solid var(--headline);
 }
 /* bölüm seçme yeri bitiş */
 
 /* not girme bölümü  */
 main > .mark-section{
-    background-color: #b8b4bd;
+    background-color: var(--box-background);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
     gap: 30px;
     margin: 20px auto 0  auto;
-    max-width: 600px;
+    max-width: 550px;
     padding: 40px;
     font-weight: 600;
+    border: 5px solid var(--text-color);
 }
 article{
     display: flex;
@@ -88,26 +121,45 @@ div{
     flex-direction: row;
     gap: 8px;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
+    letter-spacing: 0px;
 }
 input{
     width:42px;
     height:36px;
-    border: 2px solid var(--purple);
+    border: none;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 18px;
     outline: none;
     padding: 2px;
     align-items: center;
     text-align: center;
-    font-family: 'Handjet', cursive;
+    font-family:'youtubeFont', sans-serif; 
     font-weight: 600;
+    background-color: var(--light-green);
+    color: var(--text-color);
 }
 input:focus{
-    transition: 0.5s;
-    border: 2px solid var(--light-orange);
+    transition: 0.05s;
+    border: 2px solid var(--headline);
 }
-
+/* sınav isimlerini uzun hali bilgilendirme */
+.long-form-exams{
+    background-color: var(--box-background);
+    border-radius: 5px;
+    margin: 5px auto 0  auto;
+    width: 550px;
+    padding: 10px;
+    border: 5px solid var(--text-color);
+    
+}
+.long-form{
+    height: 40px;
+    width: 160px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 800;
+}
 /* buton bölümü */
 .buttons-area{
     display: flex;
@@ -120,33 +172,29 @@ input:focus{
     padding: 10px;
     border: none;
     cursor: pointer;
-    font-family: 'Handjet', cursive;
-    color: whitesmoke;
+    font-family:'youtubeFont', sans-serif;
     font-weight: 600;
-    letter-spacing: 2px;
+    background-color: var(--button-background-color);
+    color: var(--text-color);
 }
-.button-1{
-    background-color: var(--light-orange);
-    color: white;
+.buttons:hover{
+    color: var(--button-background-color);
+    background-color: var(--text-color);
 }
-.button-1:hover{
-    background-color: #ed7448;
-}
-.button-2{
-    background-color: var(--pink);
-}
-.button-2:hover{
-    background-color: #b156a9;
-}
+
 
 /* sonuç bölümü */ 
 .result-area{
     margin: 0 auto 0 auto;
     width:550px;
     padding: 20px;
-    background-color:#b8b4bd;
+    background-color:var(--box-background);
     margin-bottom: 20px;
     border-radius: 5px;
+    border: 5px solid var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .result-info{
     font-size: 14px;
@@ -154,13 +202,15 @@ input:focus{
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 6px;
+    color: var(--text-color);
 }
 .font-20{
-    font-size: 20px;
+    font-size: 18px;
 }
 .finalResult{
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
+    color: var(--text-color);
     text-decoration: underline;
-    text-decoration-color: #ed7448;
+    text-decoration-color: var(--headline);
 }
