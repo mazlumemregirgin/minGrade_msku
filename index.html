@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>minGrade Msku-ydyo</title>
+    <title>minGrade Msku-Ydyo</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
     <header >
-        <h1>Final Sınavından En Düşük Kaç Almalısın?</h1><br>
+        <h1>What Should Be Your Minimum Proficieny Exam Grade ?</h1><br>
         <h4>made by <a href="https://www.linkedin.com/in/mazlum-emre-girgin/" target="_blank">mazlum emre girgin</a></h4>
     </header>
     <main>
         <section class="info-section">
             <div class="aim-site-info">
                 <h2>Sitenin Amacı</h2>
-                <p>Bu site Muğla Sıtkı Koçman Üniversitesi Yabancı Dil Yüksekokulu'nda okuyan öğrencilerin yıl içinde aldıkları notlara göre hazırlık programından kalmamaları için yıl sonunda girecekleri final sınavında en az kaç puan almaları gerektiğini hesaplamaları için yapılmıştır.</p>
+                <p>Bu site Muğla Sıtkı Koçman Üniversitesi Yabancı Dil Yüksekokulu'nda okuyan hazırlık öğrencilerinin yıl içinde aldıkları sınav notlarına göre hazırlık programından kalmamaları için yıl sonunda girecekleri final sınavında en az kaç puan almaları gerektiğini hesaplamaları için yapılmıştır.</p>
             </div>
             <div class="aim-site-info">
                 <h2>Nasıl Kullanılır?</h2>
                 <p><li>"Choose Your Department" kısmından bölüm seçilir.</li>
+                <li>Sınavların yüzdelik ağırlıkları okul tarafından belirlenen değerlere göre oluşturulmuştur. İstenildiği takdirde "Exam Percentiles" kısmından dinamik olarak değiştirilebilir.</li>
                 <li>Not girme bölümünden yıl içinde alınan notlar eksiksiz şekilde girilir.</li>
                 <li>"Show Me The Grade" butonuna basarak sonuç öğrenilir.</li></p>
             </div>
@@ -50,7 +51,55 @@
                     <option value="55">Tourist Guidance (55)</option>
                 </select>
         </section>
+        <section class="examPercentage-section">
+            <article class="examPercentage-info">
+                <h2>Exam Percentiles (%)</h2>
+                <p>(Do not touch this section unless you are sure it has been changed. !!!)</p>
+            </article>
+            <article class="examPercentage-input">
+                <div>
+                    <p>Q :</p>
+                    <input type="text" inputmode="numeric" id="qperc" value="4">
+                </div>
+                <div>
+                    <p>Wq :</p>
+                    <input type="text" inputmode="numeric" id="wqperc" value="4">
+                </div>
+                <div>
+                    <p>Ach :</p>
+                    <input type="text" inputmode="numeric" id="achperc" value="10">
+                </div>
+                <div>
+                    <p>Sp :</p>
+                    <input type="text" inputmode="numeric" id="spperc" value="3">
+                </div>
+            </article>
+            <article class="examPercentage-input">
+                <div>
+                    <p>Lms :</p>
+                    <input type="text" inputmode="numeric" id="lmsperc" value="5">
+                </div>
+                <div>
+                    <p>Se :</p>
+                    <input type="text" inputmode="numeric" id="seperc" value="8">
+                </div>
+                <div>
+                    <p>Spj :</p>
+                    <input type="text" inputmode="numeric" id="spjperc" value="6">
+                </div>
+                <div>
+                    <p>Loe :</p>
+                    <input type="text" inputmode="numeric" id="loeperc" value="8">
+                </div>
+                
+            <article>
+
+            
+        </section>
         <section class="mark-section">
+            <article>
+                <h2>Enter Your Grades :</h2>
+            </article>
             <article>
                 <div>
                     <p>Q1:</p>
@@ -170,7 +219,7 @@
             <button class="buttons button-1">Show Me The Grade</button>
             <button class="buttons button-2">Clear All</button>
         </section>
-        <div class="result-list">
+        <div class="result-list" style="margin-top: 50px; margin-bottom: 50px;">
          <!--
         <section  class="result-area">
             
