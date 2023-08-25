@@ -18,12 +18,22 @@ const lms2 = document.querySelector("#lms2")
 const sp2 = document.querySelector("#sp2")
 const loe = document.querySelector("#loe")
 
+//sınavların yüzdelik ağırlıkları seçildi
+const qperc = document.querySelector("#qperc")
+const wqperc = document.querySelector("#wqperc")
+const achperc = document.querySelector("#achperc")
+const spperc = document.querySelector("#spperc")
+const lmsperc = document.querySelector("#lmsperc")
+const seperc = document.querySelector("#seperc")
+const spjperc = document.querySelector("#spjperc")
+const loeperc = document.querySelector("#loeperc")
+
 //butonlar seçildi.
 const calcButton = document.querySelector(".button-1")
 const delButton = document.querySelector(".button-2")
 
 //sonuç inputu seçildi.
-const finalExamResult= document.querySelector(".finalResult")
+
 
 //calculate butonuna tıklayınca yapılacak işlemler için fonksiyon oluşturuldu.
 calcButton.addEventListener("click",calculate);
@@ -52,45 +62,47 @@ function calculate(e){
 
     //quiz ve writing quizleri seçip işlem yapıldı.
     q1Result= q1.value;
-    wq1Result= wq1.value
     q2Result= q2.value;
-    wq2Result= wq2.value;
     q3Result= q3.value;
-    wq3Result= wq3.value;
     q4Result= q4.value;
-    wq4Result= wq4.value;
-    var qwqValue= (parseInt(q1Result) + parseInt(wq1Result) + parseInt(q2Result) + parseInt(wq2Result) + parseInt(q3Result) + parseInt(wq3Result) + parseInt(q4Result) + parseInt(wq4Result))*0.04
+    var qValue= (parseInt(q1Result) + parseInt(q2Result) + parseInt(q3Result) + parseInt(q4Result))*(qperc.value/100)
 
+    //writing quizler seçilip işlem yapıldı.
+    wq1Result= wq1.value
+    wq2Result= wq2.value;
+    wq3Result= wq3.value;
+    wq4Result= wq4.value;
+    var wqValue= ( parseInt(wq1Result) + parseInt(wq2Result) + parseInt(wq3Result) + parseInt(wq4Result) )*(wqperc.value/100)
     //achievementlar seçildi işlem yapıldı.
     ach1Result= ach1.value;
     ach2Result= ach2.value;
     ach3Result= ach3.value;
-    var achValue= (parseInt(ach1Result)+parseInt(ach2Result)+parseInt(ach3Result))*0.1;
+    var achValue= (parseInt(ach1Result)+parseInt(ach2Result)+parseInt(ach3Result))*(achperc.value/100);
 
     //student performanslar seçildi işlem yapıldı.
     sp1Result= sp1.value;
     sp2Result= sp2.value;
-    var spValue= (parseInt(sp1Result)+parseInt(sp2Result))*0.03;
+    var spValue= (parseInt(sp1Result)+parseInt(sp2Result))*(spperc.value/100);
     
     //lms ler seçildi işlem yapıldı.
     lms1Result= lms1.value;
     lms2Result= lms2.value;
-    var lmsValue= (parseInt(lms1Result)+parseInt(lms2Result))*0.05
+    var lmsValue= (parseInt(lms1Result)+parseInt(lms2Result))*(lmsperc.value/100)
     
     //speaking exam seçildi işlem yapıldı.
     seResult= se.value;
-    var seValue= parseInt(seResult)*0.08;
+    var seValue= parseInt(seResult)*(seperc.value/100);
 
     //speaking project seçildi işlem yapıldı.
     spjResult= spj.value;
-    var spjValue=parseInt(spjResult)*0.06
+    var spjValue=parseInt(spjResult)*(spjperc.value/100)
     
     //loe seçildi işlem yapıldı.
     loeResult= loe.value;
-    var loeValue= parseInt(loeResult)*0.08
+    var loeValue= parseInt(loeResult)*parseInt(loeperc.value/100)
 
     //dönem içi sınavlar ayrı ayrı toplandı işlem yapıldı en sonunda 40'ı alındı.
-    var totalExamsValue = (parseInt(qwqValue) + parseInt(achValue) + parseInt(spValue) + parseInt(lmsValue) + parseInt(seValue) + parseInt(spjValue) + parseInt(loeValue))*0.4
+    var totalExamsValue = (parseInt(qValue) + parseInt(wqValue) + parseInt(achValue) + parseInt(spValue) + parseInt(lmsValue) + parseInt(seValue) + parseInt(spjValue) + parseInt(loeValue))*0.4
 
     //elde edilen puan departmenta göre değişen hazırlığı geçme puanından çıkarıldı.
     var pointShouldGet = passingGrade - parseInt(totalExamsValue)
@@ -211,6 +223,7 @@ function calculate(e){
 
     
     
+    console.log(wqperc.value/100)
 
     /* clear all butonuna basılınca yapılacaklar eklendi */ 
     const divToRemove = document.querySelector(".result-area");
