@@ -204,7 +204,7 @@ function calculate(e){
     //divin içindeki açıklama5
     const h2Info5 = document.createElement("h2")
     h2Info5.classList.add("font-20")
-    h2Info5.innerText="The grade you need to get from the final exam for the minimum score :"
+    h2Info5.innerText="The grade you need to get from the Proficiency Exam for the minimum score :"
     resultDiv.appendChild(h2Info5)
 
     //divin içindeki notu gösteren paragraf5
